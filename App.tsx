@@ -4,16 +4,15 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import DrawerNavigator from './navigation/DrawerNavigation/DrawerNavigator';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
-  useColorScheme,
   View,
 } from 'react-native';
 
 function App(){
+    <View>
+      <Text style={styles.heading}>Drawer Menu</Text>
+    </View>
   return(
     <NavigationContainer>
       <DrawerNavigator />
