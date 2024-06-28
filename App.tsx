@@ -1,6 +1,8 @@
 
 
 import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import DrawerNavigator from './navigation/DrawerNavigation/DrawerNavigator';
 import {
   SafeAreaView,
   ScrollView,
@@ -13,9 +15,9 @@ import {
 
 function App(){
   return(
-    <View>
-      <Text style={styles.heading}>Hello There</Text>
-    </View>
+    <NavigationContainer>
+      <DrawerNavigator />
+    </NavigationContainer>
   )
 }
 
