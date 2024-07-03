@@ -9,8 +9,12 @@ const Drawer = createDrawerNavigator();
 function DrawerNavigator() {
   return (
     <Drawer.Navigator>
-      <Drawer.Screen name="DrawerHome" component={TabNavigation}/>
-      <Drawer.Screen name="DrawerSettings" component={SettingsScreen} />
+      <Drawer.Screen 
+        name="Home" 
+        component={TabNavigation}
+        options={{headerTitle:""}}
+        />
+      <Drawer.Screen name="Settings" component={SettingsScreen} />
     </Drawer.Navigator>
   );
 }
