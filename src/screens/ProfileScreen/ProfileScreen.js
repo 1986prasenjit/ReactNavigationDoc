@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const DetailsScreen = () => {
+const ProfileScreen = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.headingText}>DetailsScreen</Text>
+      <Text style={styles.headingText}>MessageScreen</Text>
     </View>
   )
 }
@@ -21,4 +21,5 @@ const styles = StyleSheet.create({
         color:"#000"
     }
 })
-export default DetailsScreen;
+
+export default ProfileScreen;
