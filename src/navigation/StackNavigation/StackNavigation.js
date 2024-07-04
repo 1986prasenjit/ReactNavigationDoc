@@ -9,20 +9,15 @@ const StackNavigation = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen 
-        name="React Navigation Docs" 
+        name="HomeScreen" 
         component={HomeScreen}
         options={{
-          headerShown:true,
-          headerStyle:{
-            backgroundColor: `rgba(90,90,250,0.8)`,
-          },
-          headerTintColor:"#fff",
+          headerShown:false,
         }}
         />
       <Stack.Screen 
         name="DetailsScreen" 
-        component={DetailsScreen} 
-        options={{headerShown:false}}
+        component={DetailsScreen}
         />
     </Stack.Navigator>
   );

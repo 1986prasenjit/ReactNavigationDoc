@@ -12,7 +12,13 @@ function DrawerNavigator() {
       <Drawer.Screen 
         name="Home" 
         component={TabNavigation}
-        options={{headerTitle:""}}
+        options={{
+          headerTitle:"React Native Docs",
+          headerStyle:{
+            backgroundColor: `rgba(90,90,250,0.8)`,
+          },
+          headerTintColor:"#fff",
+        }}
         />
       <Drawer.Screen name="Settings" component={SettingsScreen} />
     </Drawer.Navigator>
