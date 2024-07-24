@@ -1,18 +1,47 @@
 import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, Image} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  ImageBackground,
+  ScrollView,
+  Image,
+} from 'react-native';
 import installImage from '../../assets/images/install.jpg';
 import installImage1 from '../../assets/images/installs1.jpg';
 import tabImg from '../../assets/images/tabNav.jpg';
+import navImg from '../../assets/images/nav.jpg';
+import {useNavigation} from '@react-navigation/native';
 const HomeScreen = () => {
+  const navigation = useNavigation();
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
+      <View>
+        <View style={styles.headerImageWrapper}>
+          <ImageBackground
+            blurRadius={8}
+            source={navImg}
+            style={styles.headerImage}>
+            <Text style={styles.headerText}>React Native Navigation Doc</Text>
+          </ImageBackground>
+        </View>
+        <Text style={styles.description}>
+          React Native is a Popular Libary for Routing and Navigation in React
+          Native applications. It Porvides a Comprehensive and fexible way to
+          navigate between the screens and manage the navigation state within
+          your application. React Navigation is widely used due to its ease of
+          use, entensive documentation, and active community support.
+        </Text>
+      </View>
       <View style={styles.categoriesContainer}>
         <Text style={styles.categoriesContainerText}>Categories</Text>
         <Text style={styles.categoriesContainerText}>See all</Text>
       </View>
       <View style={styles.docsContainer}>
         <View style={[styles.shadow, styles.categoriesImgContainer]}>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('InstallationListScreen')}>
             <Image source={installImage} style={styles.categoriesImg} />
           </TouchableOpacity>
           <Text style={styles.categoryText}>Installation</Text>
@@ -36,21 +65,50 @@ const HomeScreen = () => {
           <Text style={styles.categoryText}>Stack Navigation</Text>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
     backgroundColor: '#EEEDEB',
   },
+  headerImageWrapper: {
+    width: '95%',
+    height: 150,
+    margin: 10,
+    borderRadius: 10,
+    overflow: 'hidden',
+  },
+  headerImage: {
+    width: '100%',
+    height: '100%',
+    justifyContent: 'center',
+  },
+  headerText: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#fff',
+    textAlign: 'center',
+    zIndex: 100,
+  },
+  description: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#850F8D',
+    textAlign: 'justify',
+    letterSpacing: 0.5,
+    marginHorizontal: 16,
+    width: '98%',
+  },
   categoriesContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
     flexDirection: 'row',
     gap: 200,
     marginBottom: 10,
   },
+
   categoriesContainerText: {
     fontSize: 20,
     fontWeight: 'bold',

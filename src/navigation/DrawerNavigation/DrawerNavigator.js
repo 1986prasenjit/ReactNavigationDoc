@@ -4,7 +4,7 @@ import TabNavigation from '../TabNavigation/TabNavigation';
 import DetailsScreen from '../../screens/DetailsScreen/DetailsScreen';
 import JoinTeam from '../../screens/JoinOurTeamScreen/JoinTeam';
 import MessageScreen from '../../screens/MessageScreen/MessageScreen';
-import CustomDrawer from '../../components/CustomDrawer';
+import CustomDrawer from '../../components/CustomDrawerComponent/CustomDrawer';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Drawer = createDrawerNavigator();
