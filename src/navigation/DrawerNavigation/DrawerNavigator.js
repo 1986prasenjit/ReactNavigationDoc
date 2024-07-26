@@ -1,6 +1,6 @@
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import SettingsScreen from '../../screens/SettingsScreen/SettingsScreen';
-import TabNavigation from '../TabNavigation/TabNavigation';
+import StackNavigation from '../StackNavigation/StackNavigation';
 import DetailsScreen from '../../screens/DetailsScreen/DetailsScreen';
 import JoinTeam from '../../screens/JoinOurTeamScreen/JoinTeam';
 import MessageScreen from '../../screens/MessageScreen/MessageScreen';
@@ -11,11 +11,13 @@ const Drawer = createDrawerNavigator();
 
 function DrawerNavigator() {
   return (
-    <Drawer.Navigator drawerContent={props => <CustomDrawer {...props} />}
+    <Drawer.Navigator 
+    drawerContent={props => <CustomDrawer {...props} />}
     screenOptions={{
       drawerActiveBackgroundColor:`rgba(90,90,250,0.8)`,
       drawerActiveTintColor:"#fff",
       drawerInactiveTintColor:"#212121",
+      headerShown:false,
       drawerLabelStyle:
       {
         marginLeft:-25,
@@ -25,13 +27,14 @@ function DrawerNavigator() {
     }}>
       <Drawer.Screen
         name="Home"
-        component={TabNavigation}
+        component={StackNavigation}
         options={{
           headerTitle: 'React Native Docs',
           headerStyle: {
             backgroundColor: `#8200d6`,
           },
           headerTintColor: '#fff',
+          headerShown:true,
           drawerIcon: ({color}) => (
             <MaterialCommunityIcons name="home" size={15} color={color} />
           ),
@@ -41,6 +44,7 @@ function DrawerNavigator() {
         name="About Us"
         component={DetailsScreen}
         options={{
+          headerShown:true,
           drawerIcon: ({color}) => (
             <MaterialCommunityIcons
               name="information-variant"
@@ -54,6 +58,7 @@ function DrawerNavigator() {
         name="Join Our Team"
         component={JoinTeam}
         options={{
+          headerShown:true,
           drawerIcon: ({color}) => (
             <MaterialCommunityIcons
               name="account-group"
@@ -67,6 +72,7 @@ function DrawerNavigator() {
         name="Contact Us"
         component={MessageScreen}
         options={{
+          headerShown:true,
           drawerIcon: ({color}) => (
             <MaterialCommunityIcons name="headphones" size={15} color={color} />
           ),
@@ -76,6 +82,7 @@ function DrawerNavigator() {
         name="Settings"
         component={SettingsScreen}
         options={{
+          headerShown:true,
           drawerIcon: ({color}) => (
             <MaterialCommunityIcons name="cog" size={15} color={color} />
           ),

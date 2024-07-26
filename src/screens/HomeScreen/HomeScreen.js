@@ -47,7 +47,9 @@ const HomeScreen = () => {
           <Text style={styles.categoryText}>Installation</Text>
         </View>
         <View style={[styles.shadow, styles.categoriesImgContainer]}>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={()=>navigation.navigate("DrawerDocsListScreen")}
+          >
             <Image source={installImage1} style={styles.categoriesImg} />
           </TouchableOpacity>
           <Text style={styles.categoryText}>Drawer Navigation</Text>

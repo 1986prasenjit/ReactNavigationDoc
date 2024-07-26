@@ -7,12 +7,16 @@ const CustomCard = ({title, onPress}) => {
     <View style={styles.mainContainer}>
       <View style={styles.docsContainerWrapper}>
         <View style={[styles.docsContainer, styles.elevateCard]}>
-          <View style={styles.docsItems}>
-            <TouchableOpacity onPress={onPress}>
+          <TouchableOpacity onPress={onPress}>
+            <View style={styles.docsItems}>
               <Text style={styles.text}>{title}</Text>
-            </TouchableOpacity>
-            <MaterialCommunityIcons name="arrow-right-thin" size={20} style={styles.icon} />
-          </View>
+              <MaterialCommunityIcons
+                name="arrow-right-thin"
+                size={20}
+                style={styles.icon}
+              />
+            </View>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -27,7 +31,7 @@ const styles = StyleSheet.create({
   },
   docsContainerWrapper: {
     width: '100%',
-    padding:10
+    padding: 10,
   },
   docsContainer: {
     width: '100%',
@@ -35,7 +39,7 @@ const styles = StyleSheet.create({
     padding: 10,
     marginVertical: 10,
   },
-  docsItems:{
+  docsItems: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -51,9 +55,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5F7F8',
     borderRadius: 10,
   },
-  icon:{
-    color:"#850F8D"
-  }
+  icon: {
+    color: '#850F8D',
+  },
 });
 
 export default CustomCard;

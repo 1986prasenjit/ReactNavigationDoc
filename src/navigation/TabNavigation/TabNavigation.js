@@ -1,20 +1,19 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import StackNavigation from '../StackNavigation/StackNavigation';
 import SettingsScreen from '../../screens/SettingsScreen/SettingsScreen';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import HomeScreen from '../../screens/HomeScreen/HomeScreen';
 
 const BottomTab = createBottomTabNavigator();
 
 const TabNavigation = () => {
   return (
-    <BottomTab.Navigator>
+    <BottomTab.Navigator screenOptions={{headerShown:false}}>
       <BottomTab.Screen
         name="HomeTab"
-        component={StackNavigation}
+        component={HomeScreen}
         options={{
-          headerShown: false,
           tabBarIcon: ({color, size}) => {
             return (
               <MaterialCommunityIcons name="home" size={size} color={color} />
@@ -26,7 +25,6 @@ const TabNavigation = () => {
         name="Settings"
         component={SettingsScreen}
         options={{
-          headerShown: false,
           tabBarIcon: ({color, size}) => {
             return (
               <MaterialCommunityIcons
