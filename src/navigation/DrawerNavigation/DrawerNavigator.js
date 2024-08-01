@@ -6,14 +6,19 @@ import JoinTeam from '../../screens/JoinOurTeamScreen/JoinTeam';
 import MessageScreen from '../../screens/MessageScreen/MessageScreen';
 import CustomDrawer from '../../components/CustomDrawerComponent/CustomDrawer';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import AboutScreen from '../../screens/AboutUsScreen/AboutScreen';
 
 const Drawer = createDrawerNavigator();
 
-function DrawerNavigator() {
+function DrawerNavigator({navigation}) {
   return (
     <Drawer.Navigator 
     drawerContent={props => <CustomDrawer {...props} />}
     screenOptions={{
+      headerStyle: {
+        backgroundColor: '#850F8D',
+      },
+      headerTintColor: '#fff',
       drawerActiveBackgroundColor:`rgba(90,90,250,0.8)`,
       drawerActiveTintColor:"#fff",
       drawerInactiveTintColor:"#212121",
@@ -29,12 +34,6 @@ function DrawerNavigator() {
         name="Home"
         component={StackNavigation}
         options={{
-          headerTitle: 'React Native Docs',
-          headerStyle: {
-            backgroundColor: `#8200d6`,
-          },
-          headerTintColor: '#fff',
-          headerShown:true,
           drawerIcon: ({color}) => (
             <MaterialCommunityIcons name="home" size={15} color={color} />
           ),
@@ -42,9 +41,10 @@ function DrawerNavigator() {
       />
       <Drawer.Screen
         name="About Us"
-        component={DetailsScreen}
+        component={AboutScreen}
         options={{
           headerShown:true,
+
           drawerIcon: ({color}) => (
             <MaterialCommunityIcons
               name="information-variant"

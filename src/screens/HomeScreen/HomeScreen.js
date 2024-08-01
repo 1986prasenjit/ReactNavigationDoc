@@ -13,10 +13,21 @@ import installImage1 from '../../assets/images/installs1.jpg';
 import tabImg from '../../assets/images/tabNav.jpg';
 import navImg from '../../assets/images/nav.jpg';
 import {useNavigation} from '@react-navigation/native';
+import DetailsScreen from '../DetailsScreen/DetailsScreen';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 const HomeScreen = () => {
   const navigation = useNavigation();
   return (
     <ScrollView style={styles.container}>
+      <View style={styles.navigationContainer}>
+        <TouchableOpacity onPress={() => navigation.openDrawer()}>
+          <MaterialCommunityIcons
+            name="menu"
+            style={styles.navigationIcon}
+          />
+        </TouchableOpacity>
+        <Text style={styles.navigationText}>React Navigation Docs</Text>
+      </View>
       <View>
         <View style={styles.headerImageWrapper}>
           <ImageBackground
@@ -26,12 +37,16 @@ const HomeScreen = () => {
             <Text style={styles.headerText}>React Native Navigation Doc</Text>
           </ImageBackground>
         </View>
-        <Text style={styles.description}>
-          React Native is a Popular Libary for Routing and Navigation in React
-          Native applications. It Porvides a Comprehensive and fexible way to
-          navigate between the screens and manage the navigation state within
-          your application. React Navigation is widely used due to its ease of
-          use, entensive documentation, and active community support.
+        <Text
+          style={styles.description}
+          numberOfLines={7}
+          onPress={() => navigation.navigate(DetailsScreen)}>
+          React Navigation is a Popular Libary for Routing and Navigation in
+          React Native applications both for IOS & Android.It Provides a
+          Comprehensive and fexible way to navigate between the screens and
+          manage the navigation state within your application.React Navigation
+          READ MORE is widely used due to its ease of use, entensive
+          documentation, and active community support.
         </Text>
       </View>
       <View style={styles.categoriesContainer}>
@@ -48,8 +63,7 @@ const HomeScreen = () => {
         </View>
         <View style={[styles.shadow, styles.categoriesImgContainer]}>
           <TouchableOpacity
-            onPress={()=>navigation.navigate("DrawerDocsListScreen")}
-          >
+            onPress={() => navigation.navigate('DrawerDocsListScreen')}>
             <Image source={installImage1} style={styles.categoriesImg} />
           </TouchableOpacity>
           <Text style={styles.categoryText}>Drawer Navigation</Text>
@@ -75,6 +89,25 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#EEEDEB',
   },
+  navigationContainer: {
+    backgroundColor: '#850F8D',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'flexStart',
+    alignItems: 'center',
+    height: 70,
+    padding: 5,
+  },
+  navigationText: {
+    marginLeft: 10,
+    fontSize: 25,
+    fontWeight: 'bold',
+    color: '#fff',
+  },
+  navigationIcon: {
+    fontSize: 35,
+    color: '#fff',
+  },
   headerImageWrapper: {
     width: '95%',
     height: 150,
@@ -95,13 +128,14 @@ const styles = StyleSheet.create({
     zIndex: 100,
   },
   description: {
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: 'bold',
     color: '#850F8D',
     textAlign: 'justify',
-    letterSpacing: 0.5,
+    letterSpacing: 0.2,
     marginHorizontal: 16,
-    width: '98%',
+    lineHeight: 25,
+    width: '94%',
   },
   categoriesContainer: {
     alignItems: 'center',

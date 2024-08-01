@@ -9,31 +9,41 @@ const BottomTab = createBottomTabNavigator();
 
 const TabNavigation = () => {
   return (
-    <BottomTab.Navigator screenOptions={{headerShown:false}}>
+    <BottomTab.Navigator
+      screenOptions={({route}) => ({
+        tabBarStyle: {
+          backgroundColor: '#850F8D',
+        },
+        headerShown: false,
+        tabBarShowLabel: false,
+        tabBarActiveTintColor: '#fff',
+        tabBarInactiveTintColor: '#212121',
+        tabBarIcon: ({focused, color}) => {
+          let iconName;
+
+          if (route.name === 'HomeTab') {
+            iconName = focused ? 'home' : 'home-outline';
+          } else if (route.name === 'Settings') {
+            iconName = focused ? 'cog' : 'cog-outline';
+          }
+
+          return (
+            <MaterialCommunityIcons name={iconName} size={35} color={color} />
+          );
+        },
+      })}>
       <BottomTab.Screen
         name="HomeTab"
         component={HomeScreen}
         options={{
-          tabBarIcon: ({color, size}) => {
-            return (
-              <MaterialCommunityIcons name="home" size={size} color={color} />
-            );
-          },
+          headerShown: false,
         }}
       />
       <BottomTab.Screen
         name="Settings"
         component={SettingsScreen}
         options={{
-          tabBarIcon: ({color, size}) => {
-            return (
-              <MaterialCommunityIcons
-                name="cog"
-                size={size}
-                color={color}
-              />
-            );
-          },
+          headerShown: false,
         }}
       />
     </BottomTab.Navigator>
