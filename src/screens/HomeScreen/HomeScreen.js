@@ -65,13 +65,17 @@ const HomeScreen = () => {
           <Text style={styles.categoryText}>Drawer Navigation</Text>
         </View>
         <View style={[styles.shadow, styles.categoriesImgContainer]}>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={()=> navigation.navigate("TabDocsListScreen")}
+          >
             <Image source={tabImg} style={styles.categoriesImg} />
           </TouchableOpacity>
           <Text style={styles.categoryText}>Tab Navigation</Text>
         </View>
         <View style={[styles.shadow, styles.categoriesImgContainer]}>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={()=> navigation.navigate("StackDocsListScreen")}
+          >
             <Image source={installImage} style={styles.categoriesImg} />
           </TouchableOpacity>
           <Text style={styles.categoryText}>Stack Navigation</Text>

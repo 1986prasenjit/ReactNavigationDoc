@@ -5,10 +5,10 @@ import DetailsScreen from '../../screens/DetailsScreen/DetailsScreen';
 import InstallationListScreen from '../../screens/InstallationListScreen/InstallationListScreen';
 import TabNavigation from '../TabNavigation/TabNavigation';
 import DrawerDocsListScreen from '../../screens/DrawerDocsListScreen/DrawerDocsListScreen';
-import DrawerInstallationInformation from '../../screens/DrawerInstallationInformation/DrawerInstallationInformation';
-import ReanimatedInstallationDocs from '../../screens/ReanimatedInstallationDocs/ReanimatedInstallationDocs';
-import DrawerInstallationDocs from '../../screens/DrawerInstallationDocs/DrawerInstallationDocs';
 import NavigationInformationScreen from '../../screens/NavigationInformationScreen/NavigationInformationScreen';
+import SplashScreen from '../../screens/SplashScreen/SplashScreen';
+import StackDocsListScreen from '../../screens/StackDocsListScreen/StackDocsListScreen';
+import TabDocsListScreen from '../../screens/TabDocsListScreen/TabDocsListScreen';
 const Stack = createStackNavigator();
 
 const StackNavigation = () => {
@@ -20,6 +20,13 @@ const StackNavigation = () => {
       },
       headerTintColor:"#fff"
       }}>
+        <Stack.Screen
+          name='SpalshScreen'
+          component={SplashScreen}
+          options={{
+            headerShown:false
+          }}
+        />
       <Stack.Screen
         name="HomeStack"
         component={TabNavigation}
@@ -44,27 +51,19 @@ const StackNavigation = () => {
         }}
       />
       <Stack.Screen
-        name="DrawerInstallationInformation"
-        component={DrawerInstallationInformation}
+        name='StackDocsListScreen'
+        component={StackDocsListScreen}
         options={{
-          headerTitle: 'Drawer Installation Details',
-          headerShown: true,
+          headerShown:true,
+          headerTitle:"Stack Installation Screen"
         }}
       />
       <Stack.Screen
-        name="ReanimatedInstallationDocs"
-        component={ReanimatedInstallationDocs}
+        name='TabDocsListScreen'
+        component={TabDocsListScreen}
         options={{
-          headerTitle: 'Reanimated Installation Details',
-          headerShown: true,
-        }}
-      />
-      <Stack.Screen
-        name="DrawerInstallationDocs"
-        component={DrawerInstallationDocs}
-        options={{
-          headerTitle: 'Drawer Installation Procees',
-          headerShown: true,
+          headerShown:true,
+          headerTitle:"Tab List Screen"
         }}
       />
       <Stack.Screen 

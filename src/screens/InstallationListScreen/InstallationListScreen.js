@@ -81,7 +81,7 @@ const InstallationListScreen = () => {
     <TouchableOpacity>
       <CardComponent 
       title={item.title}
-      screenTitle={item.title}
+      // screenTitle={item.title}
       onPress={() => navigation.navigate(item.screen, {
         id: item.id,
         title: item.title,
