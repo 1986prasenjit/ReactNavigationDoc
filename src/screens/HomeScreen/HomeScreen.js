@@ -13,18 +13,15 @@ import installImage1 from '../../assets/images/installs1.jpg';
 import tabImg from '../../assets/images/tabNav.jpg';
 import navImg from '../../assets/images/nav.jpg';
 import {useNavigation} from '@react-navigation/native';
-import DetailsScreen from '../DetailsScreen/DetailsScreen';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import NavigationInformationScreen from '../NavigationInformationScreen/NavigationInformationScreen';
 const HomeScreen = () => {
   const navigation = useNavigation();
   return (
     <ScrollView style={styles.container}>
       <View style={styles.navigationContainer}>
         <TouchableOpacity onPress={() => navigation.openDrawer()}>
-          <MaterialCommunityIcons
-            name="menu"
-            style={styles.navigationIcon}
-          />
+          <MaterialCommunityIcons name="menu" style={styles.navigationIcon} />
         </TouchableOpacity>
         <Text style={styles.navigationText}>React Navigation Docs</Text>
       </View>
@@ -39,14 +36,13 @@ const HomeScreen = () => {
         </View>
         <Text
           style={styles.description}
-          numberOfLines={7}
-          onPress={() => navigation.navigate(DetailsScreen)}>
+          onPress={() => navigation.navigate(NavigationInformationScreen)}>
           React Navigation is a Popular Libary for Routing and Navigation in
           React Native applications both for IOS & Android.It Provides a
           Comprehensive and fexible way to navigate between the screens and
-          manage the navigation state within your application.React Navigation
-          READ MORE is widely used due to its ease of use, entensive
-          documentation, and active community support.
+          manage the navigation state within your application.React Navigation is widely used due to its ease of use, entensive documentation, and
+          active community support.{' '}
+          <Text style={styles.readMoreText}>READ MORE.....</Text>
         </Text>
       </View>
       <View style={styles.categoriesContainer}>
@@ -101,7 +97,7 @@ const styles = StyleSheet.create({
   navigationText: {
     marginLeft: 10,
     fontSize: 25,
-    fontWeight: 'bold',
+    fontFamily:"Poppins-ExtraBold",
     color: '#fff',
   },
   navigationIcon: {
@@ -129,7 +125,7 @@ const styles = StyleSheet.create({
   },
   description: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontFamily:"Mukta-Bold",
     color: '#850F8D',
     textAlign: 'justify',
     letterSpacing: 0.2,
@@ -147,7 +143,7 @@ const styles = StyleSheet.create({
 
   categoriesContainerText: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontFamily:"Mukta-Bold",
     marginTop: 25,
     color: '#850F8D',
   },
@@ -172,7 +168,8 @@ const styles = StyleSheet.create({
   categoryText: {
     marginTop: 10,
     fontSize: 20,
-    fontWeight: 'bold',
+    fontFamily:"Mukta-Regular",
+    fontWeight:"700",
     color: '#850F8D',
     textAlign: 'center',
   },
@@ -180,6 +177,11 @@ const styles = StyleSheet.create({
     elevation: 1,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
+  },
+  readMoreText: {
+    fontStyle: 'italic',
+    fontWeight: '600',
+    color: '#212121',
   },
 });
 

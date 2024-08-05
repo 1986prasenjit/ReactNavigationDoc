@@ -1,23 +1,34 @@
-import {StyleSheet, Text, View, ScrollView} from 'react-native';
 import React from 'react';
-import CustomDetails from '../../components/DetailsComponent/CustomDetails';
+import {StyleSheet, Text, View} from 'react-native';
+import DetailsComponent from '../../components/DetailsComponent/DetailsComponent';
 
-const DetailsScreen = () => {
+const DetailsScreen = ({route}) => {
+  const {htmlData} = route.params;
   return (
-    <ScrollView>
-      <View style={styles.container}>
-        <CustomDetails
-          data="React Navigation is a Popular Libary for Routing and Navigation inReact Native applications both for IOS & Android.It Provides a Comprehensive and fexible way to navigate between the screens and manage the navigation state within your application.React Navigation is widely used due to its ease of use, entensive documentation, and active community support."
-        />
+    <View style={styles.container}>
+      <View style={styles.headingTextContainer}>
+        <DetailsComponent htmlData={htmlData}/>
       </View>
-    </ScrollView>
+    </View>
   );
 };
 
+export default DetailsScreen;
+
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    marginTop: 5,
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+  },
+  headingTextContainer: {
+    padding: 8,
+  },
+  headingText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#201E43',
+    textAlign: 'justify',
+    marginHorizontal: 6,
+    lineHeight: 30,
   },
 });
-export default DetailsScreen;

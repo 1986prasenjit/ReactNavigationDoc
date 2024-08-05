@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, FlatList, View} from 'react-native';
-import CustomCard from '../../components/CardComponent/CustomCard';
+import CardComponent from '../../components/CardComponent/CardComponent';
 import { useNavigation } from '@react-navigation/native';
 
 const DATA = [
@@ -24,7 +24,7 @@ const DATA = [
 const DrawerDocsListScreen = () => {
     const navigation = useNavigation();
   const renderItem = ({item}) => (
-    <CustomCard
+    <CardComponent
       title={item.title}
       onPress={() => navigation.navigate(item.screen)}
     />

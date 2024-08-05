@@ -1,16 +1,14 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import HomeScreen from '../../screens/HomeScreen/HomeScreen';
 import DetailsScreen from '../../screens/DetailsScreen/DetailsScreen';
 import InstallationListScreen from '../../screens/InstallationListScreen/InstallationListScreen';
-import IOSInstallScreen from '../../screens/IOSInstallScreen/IOSInstallScreen';
-import AndroidInstallScreen from '../../screens/AndroidInstallScreen/AndroidInstallScreen';
 import TabNavigation from '../TabNavigation/TabNavigation';
 import DrawerDocsListScreen from '../../screens/DrawerDocsListScreen/DrawerDocsListScreen';
 import DrawerInstallationInformation from '../../screens/DrawerInstallationInformation/DrawerInstallationInformation';
 import ReanimatedInstallationDocs from '../../screens/ReanimatedInstallationDocs/ReanimatedInstallationDocs';
 import DrawerInstallationDocs from '../../screens/DrawerInstallationDocs/DrawerInstallationDocs';
+import NavigationInformationScreen from '../../screens/NavigationInformationScreen/NavigationInformationScreen';
 const Stack = createStackNavigator();
 
 const StackNavigation = () => {
@@ -38,26 +36,10 @@ const StackNavigation = () => {
         }}
       />
       <Stack.Screen
-        name="IOSInstallScreen"
-        component={IOSInstallScreen}
-        options={{
-          headerShown: true,
-          headerTitle: 'IOS Install Screen',
-        }}
-      />
-      <Stack.Screen
-        name="AndroidInstallScreen"
-        component={AndroidInstallScreen}
-        options={{
-          headerTitle: 'Android Install Screen',
-          headerShown: true,
-        }}
-      />
-      <Stack.Screen
         name="DrawerDocsListScreen"
         component={DrawerDocsListScreen}
         options={{
-          headerTitle: 'Drawer Installation Guide',
+          headerTitle: 'Drawer Installation Screen',
           headerShown: true,
         }}
       />
@@ -91,6 +73,14 @@ const StackNavigation = () => {
         options={{
           headerTitle:"Details Screen",
           headerShown:true
+        }}
+      />
+      <Stack.Screen
+        name='NavigationInformationScreen'
+        component={NavigationInformationScreen}
+        options={{
+          headerShown:true,
+          headerTitle:"React Navigation History"
         }}
       />
     </Stack.Navigator>

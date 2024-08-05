@@ -2,7 +2,7 @@ import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React from 'react';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const CustomCard = ({title, onPress}) => {
+const CardComponent = ({title,onPress,screenTitle}) => {
   return (
     <View style={styles.mainContainer}>
       <View style={styles.docsContainerWrapper}>
@@ -60,4 +60,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CustomCard;
+export default CardComponent;
